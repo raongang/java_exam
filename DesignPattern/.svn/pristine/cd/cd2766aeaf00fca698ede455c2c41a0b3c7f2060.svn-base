@@ -1,0 +1,7 @@
+package javatest.test.anonymous;
+
+public interface Fly {
+	public abstract String speed();
+	public String height();
+	
+}

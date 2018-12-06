@@ -1,0 +1,39 @@
+package javajungsuk.pratice.chapter7;
+
+interface Moveable{
+	public static final int A = 10;
+	public abstract void printAll();
+	
+}
+class Car{}
+class FireEngine extends Car implements Moveable{
+	int b = 20;
+	@Override
+	public void printAll() {
+		// TODO Auto-generated method stub
+		System.out.println("interface implements");
+	}
+}
+class Ambulance extends Car{}
+
+public class Exercise7_16 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		FireEngine fe = new FireEngine();
+		
+		if(fe instanceof FireEngine)System.out.println("1");
+		if(fe instanceof Moveable) {
+			Moveable m  = fe;
+			System.out.println(m.A);
+			m.printAll();
+			
+		}
+		if(fe instanceof Object) System.out.println("3");
+		if(fe instanceof Car){
+			System.out.println("4");
+			Car car= (Car)fe;
+		}
+		//if(fe instanceof Ambulance) System.out.println("5");
+		
+	}
+}

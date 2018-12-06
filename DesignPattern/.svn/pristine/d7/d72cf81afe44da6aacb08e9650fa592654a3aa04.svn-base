@@ -1,0 +1,38 @@
+package javatest.test.instanceoftest;
+
+class C1{
+	public C1(){}
+}
+class C2 extends C1{
+	public C2(){}
+}
+class C3 extends C2{
+	public C3(){}
+}
+
+/**
+ * 객체명 instanceof 타입(클래스명 or 인터페이스명 ) 
+ *  -> 객체가 해당 타입이면 true를 아니면 false를 리턴.
+ *  -> 타입에 상위클래스 객체명에 하위클래스의 객체일경우에도 true를 리턴.
+ *  -> 주의 : 타입이 상위클래스도 하위클래스도 아닐 경우에는 에러 발생.
+ * @author admin
+ */
+public class InstanceofTest {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		C1 class1 = new C1();
+		C2 class2 = new C2();
+		C3 class3 = new C3();
+		
+		if(class1 instanceof C1) 
+			System.out.println("class1 is C1's object1");
+		if(class2 instanceof C1)
+			System.out.println("class1 is C1's object 2");
+		if(class3 instanceof C1)
+			System.out.println("class1 is C1's object3");
+		if(class2 instanceof C3)
+			System.out.println("class1 is C1's object4");
+		if(class2 instanceof C2)
+			System.out.println("class1 is C1's object5");
+	}
+}

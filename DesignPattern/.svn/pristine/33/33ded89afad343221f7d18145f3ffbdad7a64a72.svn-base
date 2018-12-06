@@ -1,0 +1,51 @@
+package javatest.test.enumtest2;
+
+/**
+ * PDF-J 에는 전부 final 상수로 선언되어 있었음.
+ * Enum
+ * 클래스처럼 보이게 하는 상수
+ * Enum 클래스형을 기반으로 한 클래스형 선언
+ * @author admin
+ *
+ */
+enum Type{
+	SUCCESS,ETC_ERROR,SERVER_ERROR;
+	
+	 private int result_code;
+	
+	
+	private Type(int _result_code){ // enum에서 생성자 같은 역할 
+		this.result_code = _result_code;
+	}
+	
+	private Type(){
+		
+	}
+	/*
+	public int getCode(){
+		return result_code;
+	}*/
+}
+
+/**
+ * enum Type 는 아래와 같이 내부적으로 생략되어 있음.
+ * 
+class Type{
+	public static final Type MALE=new Type();
+	public static final Type FEMALE = new Type();
+}*/
+
+public class EnumTest3 {
+	public static void main(String[] args){
+		String result = "SUCCESS";
+		
+		for(Type type : Type.values()){
+			//if(result.equals(type.name())){
+				System.out.println("type name : " + type.name());
+				System.out.println("type code : " + type.ordinal()); //순서
+				//System.out.println("type result code : " + type.getCode());
+				//break;
+			//}
+		}//end for
+	}
+}

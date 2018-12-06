@@ -1,0 +1,22 @@
+package javatest.test.generics.limitedType;
+
+/*
+ *  제한된 Type Parameter
+ *  - 형식
+ *  public < T extends 상위타입> 리턴타입 메소드(매개변수,...){...}
+ *   {...} -> 상위타입 멤버(메소드,필드)로 한정.
+ *   하위타입으로 쓰고 싶으면 오버라이딩이나 super를 이용.
+ *   
+ *   <?> , <? extends 상위타입> , < ? Super 하위타입 >  
+ *   
+ */
+
+public class BoundedTypeParameterExam {
+	public static void main(String[] args){
+		int result1 =Util.<Double>compare(10.0, 20.0);
+		System.out.println(result1);
+		
+		int result2 = Util.compare(4.5, 3);
+		System.out.println(result2);
+	}
+}

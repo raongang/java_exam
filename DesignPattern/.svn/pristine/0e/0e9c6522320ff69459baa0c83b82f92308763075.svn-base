@@ -1,0 +1,31 @@
+package javajungsuk.example.chapter7;
+
+final class SingleTone{
+	// getInstance에서 사용될수 있도록 인스턴스가 미리 생성되어 있어야 하므로 static
+	// 클래스가 load 될때 memory 상에 올라간다.
+	private static SingleTone s; 
+	
+	//생성자가 priavte일 경우, 다른 클래스의 조상이 될 수 없다.
+	//따라서, final class로 선언하여 더 이상 상속이 안된다는 것을 의미해주면 좋음.
+	private SingleTone(){
+		
+	}
+	
+	public static SingleTone getInstance(){
+		if(s==null){
+			s = new SingleTone();
+		}
+		return s;
+	}
+}
+
+public class SingleToneTest {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//SingleTone s = new SingleTone(); // error - 생성자가 private
+		SingleTone s1 = SingleTone.getInstance();
+		
+	
+	}
+
+}

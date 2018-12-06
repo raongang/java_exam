@@ -1,0 +1,18 @@
+package javatest.test.pointhandling;
+
+import java.text.DecimalFormat;
+
+public class PointHandlingTest {
+	public static void main(String[] args){
+		//1. DecimalFormat 이용하여 n자리 이상 반올림.
+		float val =   12.2345324f;
+		double val2 = 95.5984155555555;
+		
+		DecimalFormat form = new DecimalFormat("#.###");
+		String dval = form.format(val);
+		String dva2 = form.format(val2);
+		
+		System.out.println("dval : " + dval);
+		System.out.println("dva2 : " + dva2);
+	}
+}

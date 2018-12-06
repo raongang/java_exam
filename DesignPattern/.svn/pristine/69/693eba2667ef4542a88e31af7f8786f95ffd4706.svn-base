@@ -1,0 +1,60 @@
+package javajungsuk.pratice.chapter7;
+
+class TotalUnit{
+	int x, y;
+	
+	/*
+	TotalUnit(){
+		
+	}*/
+	
+	TotalUnit(int x, int y){
+		this.x = x;
+		this.y = y;
+	}
+	
+	void move(int x, int y){
+		System.out.println("x : " + x + " y : " + y + " move");
+	}
+	
+	void stop(){
+		System.out.println("stop");
+	}
+}
+
+class Marine extends TotalUnit{
+	
+	public Marine(int x, int y) {
+		super(x, y);
+	}
+
+	void stimPack() { System.out.println("use stempack");}
+}
+
+
+class TotTank extends TotalUnit{
+	
+	public TotTank(int x, int y) {
+		super(x, y);
+		// TODO Auto-generated constructor stub
+	}
+	
+	void changeMode() { System.out.println("change attack mode");}
+}
+
+class TotDropshipe  extends TotalUnit {
+	
+	public TotDropshipe(int x, int y) {
+		super(x, y);
+		// TODO Auto-generated constructor stub
+	}
+	
+	void load() { System.out.println("load"); }
+	void unload() { System.out.println("unload");}
+}
+
+public class Exercise7_17 {
+	public static void main(String[] args){
+		 
+	}
+}

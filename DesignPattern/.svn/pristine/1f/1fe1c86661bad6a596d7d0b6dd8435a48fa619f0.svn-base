@@ -1,0 +1,43 @@
+package javatest.test;
+
+/**Override : 부모클래스에서 선언한 메소드를 자식클래스에서 다시 재정의
+ * 이때는, 자식 클래스의 메소드가 호출됨.
+ * 
+ * @author admin
+ *
+ */
+
+interface A{
+	void printMethod();
+	
+}
+
+class B implements A {
+	@Override
+	public void printMethod() {
+		// TODO Auto-generated method stub
+		System.out.println("Print B");
+		printMethod2();
+	}
+	
+	public void printMethod2(){
+		System.out.println("Print2 B");
+	}
+}
+
+class C extends B{
+	@Override
+	public void printMethod2(){
+		System.out.println("Print2 C");
+	}
+}
+
+
+public class Test4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		A a = new C();
+		a.printMethod();
+	}
+}

@@ -1,0 +1,58 @@
+package javatest.test.extend;
+
+class Parent{
+	public void printName(){
+		System.out.println("printName() - Parent");
+	}
+}
+
+class Child extends Parent{
+	
+	public void printName(){
+		System.out.println("printName() - Child");
+	}
+	
+	public void printAge(){
+		System.out.println("printAge() - 18 month");
+	}
+}
+
+
+public class Inheritance {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Parent[] parentArray = new Parent[3];
+		parentArray[0] = new Child();
+		parentArray[1] = new Parent();
+		parentArray[2] = new Child();
+		
+		
+		/*
+		 * 만약 여기서  Parent test = (Parent)new Child(); test.printAge()를 하게 되면 에러 발생
+		 *  Child가 upcasting상태이기 때문이다.
+		 */
+		for(int i=0; i<3; i++){
+			/**<형변환검사의대상이되는객체> instanceof <형변환검사의기준이되는객체>
+			앞의 객체가 뒤의 객체로 형변환이 가능하다면 true를, 불가능하다면 false를 반환.
+			
+			   주의점 : instanceof 연산자로 타입검사할 경우에는, 상위클래스 타입을 먼저 검사하면 안된다.
+			*/
+			 
+			if(parentArray[i] instanceof Child){ 
+				Child tempChild = (Child)parentArray[i];
+				tempChild.printAge();
+			}else if(parentArray[i] instanceof Parent){
+				System.out.println("there is no method");
+			}
+			
+			/*
+			 if(parentArray[i] instanceof Parent){
+					System.out.println("there is no method");
+			 }else if(parentArray[i] instanceof Child){ 
+				Child tempChild = (Child)parentArray[i];
+				tempChild.printAge();
+			 }
+			 */
+		}
+	}
+}

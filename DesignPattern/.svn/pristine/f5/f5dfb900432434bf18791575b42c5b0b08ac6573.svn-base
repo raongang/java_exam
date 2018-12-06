@@ -1,0 +1,42 @@
+package javatest.test.generics2.exam5;
+
+
+interface Info2{
+	public abstract int getLevel();
+}
+
+class Employee2 implements Info2{
+	public int rank;
+	
+	public Employee2(int rank) {
+		super();
+		this.rank = rank;
+	}
+	
+	@Override
+	public int getLevel() {
+		// TODO Auto-generated method stub
+		return this.rank;
+	}
+
+}
+//interface라도 extends를 쓴다.
+class Person2<T extends Info2>{
+	public T info;
+
+	public Person2(T info2) {
+		super();
+		this.info = info;
+	}
+	
+}
+
+public class GenericDemo2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Person2 p1 = new Person2(new Employee2(1));
+		//Person<String> p2 = new Person<String>("test"); //compile error
+	}
+
+}

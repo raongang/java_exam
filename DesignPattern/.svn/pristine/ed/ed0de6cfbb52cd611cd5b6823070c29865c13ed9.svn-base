@@ -1,0 +1,34 @@
+package javajungsuk.pratice.chapter8;
+
+public class Exercise8_9 {
+
+	public static void main(String[] args) throws UnsupportedFuntionException {
+		// TODO Auto-generated method stub
+		throw new UnsupportedFuntionException("지원하지 않는 기능.",100);
+	}
+
+}
+
+
+//사용자 정의 예외처리..
+class UnsupportedFuntionException extends RuntimeException{
+	private final int ERROR_CODE;
+	
+	UnsupportedFuntionException(String message, int code){
+		super(message);
+		ERROR_CODE = code;
+	}
+	
+	public UnsupportedFuntionException(String msg) {
+		this(msg,100);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public int getErrorCode(){
+		return ERROR_CODE;
+	}
+	//exception class의 getMessage() 오버로딩
+	public String getMessage(){
+		return "["+ERROR_CODE+"]"+ super.getMessage();
+	}
+}

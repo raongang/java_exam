@@ -1,0 +1,41 @@
+package javatest.test.testNested;
+
+//안쪽 클래스를 static 변수처럼 사용하는 중첩클래스의 사용.
+public class TestNested {
+	int i;
+	static int j;
+	
+	public TestNested(){
+		System.out.println("out con");
+	}
+
+	public void outMethod(){
+		System.out.println("out method");
+	}
+	
+	public static void outStaticMehtod(){
+		System.out.println("in no");
+	}
+	
+	//nested class start 
+	static class Nested{
+		static int k;
+		public Nested(){
+			System.out.println("in con");
+		}
+		
+		public static void inMethod(){
+			System.out.println("in method");
+			TestNested.j = 10;
+			TestNested.outStaticMehtod();
+		}
+	}
+	
+	public static void main(String[] args) {
+		Nested.k = 10;
+		Nested.inMethod();
+		// TODO Auto-generated method stub
+
+	}
+
+}

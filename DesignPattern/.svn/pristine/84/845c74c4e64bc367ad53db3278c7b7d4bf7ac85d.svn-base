@@ -1,0 +1,38 @@
+package javajungsuk.pratice.chapter8;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Exercise8_8 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int answer = (int)(Math.random()*100)+1;
+		int input = 0;
+		int count = 0;
+		
+		do{
+			count++;
+			System.out.print("enter 1 between 100 : ");
+			
+			try{
+				input = new Scanner(System.in).nextInt();
+			}catch(InputMismatchException e){
+				System.out.println("re enter number");
+				continue;
+			}
+			
+			if(answer > input){
+				System.out.println("please enter more big num");
+			}else if(answer < input){
+				System.out.println("please enter more small num");
+			}else{
+				System.out.println("bingo");
+				System.out.println("try count " + count);
+				break;
+			}
+			
+		}while(true);
+	}
+
+}

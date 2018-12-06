@@ -1,0 +1,32 @@
+package javatest.test.generics2.exam3;
+
+
+/*
+ * generic method call 방법
+ * 리턴타입변수 = <구체적타입>메소드명(매개값);
+ * 리턴타입 변수= 메소드명(매개값);
+ */
+
+public class CompareMethodExam {
+	public static void main(String[] args){
+		Pair<Integer,String> pair = new Pair<Integer,String>(1,"app");
+		Pair<Integer,String> pair2 = new Pair<Integer,String>(1,"app");
+		
+		
+		boolean result = Util.compare(pair, pair2);
+				
+
+		 if(result) System.out.println("equals object");
+		 else
+			 System.out.println("different object");
+		 
+		 Pair<String,String> pair3 = new Pair<String,String>("user1","Jarc");
+		 Pair<String,String> pair4 = new Pair<String,String>("user2","Jarc");
+		 
+		 boolean result2 = Util.<String,String>compare(pair3,pair4);
+		 if(result2) System.out.println("equals object");
+		 else
+			 System.out.println("different object");		 
+		 
+	}
+}

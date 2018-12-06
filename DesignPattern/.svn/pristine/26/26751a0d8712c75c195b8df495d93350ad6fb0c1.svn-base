@@ -1,0 +1,7 @@
+package javatest.test.generics2.exam2;
+
+public class ProductExam {
+	public static void main(String[] args){
+	
+	}
+}

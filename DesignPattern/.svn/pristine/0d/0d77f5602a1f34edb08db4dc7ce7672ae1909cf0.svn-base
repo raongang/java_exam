@@ -1,0 +1,33 @@
+package javajungsuk.pratice.chapter7;
+
+class Product{
+	int price = 10;
+	int bonusPoint = 20;
+	
+	Product(){
+		super();
+	}
+	
+	void printValue(){
+		System.out.println("this.price : " + this.price);
+		System.out.println("this.bounsPoint : " + this.bonusPoint);
+	}
+}
+
+class TV extends Product{
+	TV(){
+		super(); //compiler가 자동으로 생성.
+	}
+	
+	public String toString(){
+		return "Tv";
+	}
+}
+
+
+public class Exercise7_5 {
+	public static void main(String[] args){
+		TV tv = new TV();
+		tv.printValue();
+	}
+}

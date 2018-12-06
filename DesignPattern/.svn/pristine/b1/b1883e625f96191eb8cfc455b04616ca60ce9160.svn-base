@@ -1,0 +1,42 @@
+package javatest.test.generics2.exam5;
+
+
+abstract class Info{
+	public abstract int getLevel();
+}
+
+class Employee extends Info{
+	public int rank;
+	
+	public Employee(int rank) {
+		super();
+		this.rank = rank;
+	}
+	
+	@Override
+	public int getLevel() {
+		// TODO Auto-generated method stub
+		return this.rank;
+	}
+
+}
+
+class Person<T extends Info>{
+	public T info;
+
+	public Person(T info) {
+		super();
+		this.info = info;
+	}
+	
+}
+
+public class GenericDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Person p1 = new Person(new Employee(1));
+		//Person<String> p2 = new Person<String>("test"); //compile error
+	}
+
+}

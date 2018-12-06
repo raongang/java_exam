@@ -1,0 +1,5 @@
+package javatest.test.enumtest2;
+
+public enum DevType{
+	MOBILE, WEB, SERVER, 
+}

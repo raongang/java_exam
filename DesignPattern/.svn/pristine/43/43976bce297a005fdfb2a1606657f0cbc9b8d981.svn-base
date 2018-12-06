@@ -1,0 +1,24 @@
+package javatest.test.generics;
+
+class Apple<T,S>{
+	private T first;
+	private S second;
+	
+	public Apple(T t, S s) {
+		this.first = t;
+		this.second = s;
+	}
+	public T getFirst() { return first; } 
+	public S getSecond() { return second;}
+}
+
+
+public class GenericTest3 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Apple<String,Integer> app = new Apple<String,Integer>("20", 5);
+		System.out.println("String : " + app.getFirst());
+		System.out.println("Integer : " + app.getSecond());
+		
+	}
+}

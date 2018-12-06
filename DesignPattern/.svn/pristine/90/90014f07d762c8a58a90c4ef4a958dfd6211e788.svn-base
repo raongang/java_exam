@@ -1,0 +1,30 @@
+package javatest.test.anonymous;
+
+
+public class TestAnonymouse {
+	
+	public void useFly(Fly f){
+		System.out.println(f.speed());
+		System.out.println(f.height());
+	}
+	
+	
+	public static void main(String[] args){
+		TestAnonymouse ta = new TestAnonymouse();
+		ta.useFly(new Fly() {
+			@Override
+			public String speed() {
+				// TODO Auto-generated method stub
+				System.out.println("여기1");
+				return "속도";
+			}
+			
+			@Override
+			public String height() {
+				// TODO Auto-generated method stub
+				System.out.println("여기2");
+				return "높이";
+			}
+		});//end 	
+	}//end main
+}//TestAnonymouse

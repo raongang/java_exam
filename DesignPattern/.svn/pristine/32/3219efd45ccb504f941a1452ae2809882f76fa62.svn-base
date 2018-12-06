@@ -1,0 +1,31 @@
+package javatest.test;
+import java.text.DecimalFormat;
+import java.util.Date;
+
+//test용. 
+
+public class Test3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String NC_DOU_101 = "234.0".toString();
+		double totCnt = Double.parseDouble(NC_DOU_101);
+		
+		String convert = new DecimalFormat("###").format(totCnt);
+		
+		System.out.println("NC_DOU_101 : " + NC_DOU_101);
+		System.out.println("totCnt : " + totCnt);
+		System.out.println("convert : " + convert);
+		
+		//Date date  = new Date("1/1/2001");
+		
+		//date.getime 메소드 
+		//지정된 date객체에 대해 표준시 1970년 1월 1일 자정이후의 
+		//long timeinfo = date.getTime();
+		
+		//System.out.println(date);
+		//System.out.println(timeinfo);
+		
+	}
+
+}

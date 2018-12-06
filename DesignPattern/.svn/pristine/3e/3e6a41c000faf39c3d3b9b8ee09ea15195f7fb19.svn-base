@@ -1,0 +1,46 @@
+package javatest.test.extend;
+
+public class BindTest2 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Parent_3 p = (Parent_3)new Child_3();
+		Child_3 c = new Child_3();
+		
+		System.out.println("p.x : "+ p.x);
+		p.method();
+		
+		
+		System.out.println();
+		
+		System.out.println("c.x : " + c.x);
+		c.method();
+		c.printInfo();
+		
+		
+		
+	}
+
+}//end class
+
+class Parent_3{
+	int x = 100;
+	void method(){
+		System.out.println("parent method");
+	}
+}
+
+class Child_3 extends Parent_3{
+	int x = 200;
+	void method(){
+		System.out.println("X : " + x);
+		System.out.println("super.x : " + super.x);
+		System.out.println("this.x : " + x);
+	}
+	
+	void printInfo(){
+		System.out.println("Child_3 print info");
+	}
+}
+
+
+

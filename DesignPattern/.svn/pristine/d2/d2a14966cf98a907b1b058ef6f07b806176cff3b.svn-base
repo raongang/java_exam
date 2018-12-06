@@ -1,0 +1,16 @@
+package javatest.test.generics2.exam4;
+
+
+public class BoundedTypeparameterExam {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int result = UtilCompare.compare(10, 20);
+		System.out.println("result ; " + result);
+		
+		
+		int result2 = UtilCompare.compare(4.5, 3);
+		System.out.println(result2);
+		
+		
+	}
+}

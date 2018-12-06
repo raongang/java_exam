@@ -1,0 +1,63 @@
+package javatest.test.generics;
+
+/**
+ * generic method declare 
+ * 
+ *  public <타입파라미터,...> 리턴타입 메소드명(매개변수,...){...}
+ *  ex) public <T> Box<T> boxing(T t) {...} 
+ * 
+ * generic method call
+ * 리턴타입변수 = <구체적타입>메소드명(매개값);
+ * 리턴타입변수 = 메소드명(매개값)
+ 
+ * ex) Box<Integer> box = <Integer>boxing(100);
+ *     Box<Integer> box = boxing(100);
+ */
+
+
+class Box<T>{
+	private T t;
+	
+	public void set(T t){
+		this.t = t;
+	}
+	
+	public T get(){
+		return t;
+	}
+}
+
+
+
+class Util{
+	public static <T> Box<T> boxing(T t) {
+		Box<T> box = new Box<T>();
+		box.set(t);
+		return box;
+	}
+}
+
+class Util_2{
+	public static Box<Integer> boxing(Integer t){
+		Box<Integer> box = new Box<Integer>();
+		box.set(t);
+		return box;
+	}
+}
+
+public class GenericTest4 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Box<Integer> box1 = Util.boxing(100);
+		Box<Integer> box2 = Util.<Integer> boxing(100);
+		
+		int initValue = box1.get();
+		System.out.println("initValue : " + initValue);
+		
+		Box<String> box3 = Util.boxing("300");
+		String startValue = box3.get();
+		System.out.println("startValue : " + startValue);
+		
+	}
+
+}

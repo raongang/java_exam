@@ -1,0 +1,30 @@
+package javatest.test.extend;
+
+public class BindingTest {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Parent_1 p = (Parent_1)new Child_1();
+		Child_1 c = new Child_1();
+		
+		System.out.println("p.x : " + p.x);
+		p.WhatMethod();
+		
+		System.out.println("c.x : " + c.x);
+		c.WhatMethod();
+	}
+}//end class
+
+class Parent_1{
+	int x =100;
+	void WhatMethod(){
+		System.out.println("Parent Method");
+	}
+}
+
+class Child_1 extends Parent_1{
+	int x = 200;
+	//overriding..
+	void WhatMethod(){
+		System.out.println("Child Method");
+	}
+}

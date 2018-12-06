@@ -1,0 +1,46 @@
+package javatest.test.anonymous;
+
+import java.awt.Button;
+import java.awt.Frame;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+/**
+ * anonymouse class usage :
+ * 
+ * new 조상클래스(){
+ *   멤버변수
+ *{
+ *
+ *
+ *new 구현인터페이스(){
+ *	멤버선언
+ *}
+ * @author admin
+ *
+ */
+public class TestAnonymouse1 extends Frame{
+	private static final long serialVersionUID = 1L;
+	public TestAnonymouse1(){
+		super("anonymouse test");
+		Button btn = new Button("click");
+		add(btn);
+		setSize(300,300);
+		setVisible(true);
+		
+		addWindowListener(new WindowAdapter(){
+			@Override
+			public void windowClosing(WindowEvent e) {
+				// TODO Auto-generated method stub
+				System.exit(0);
+			}
+			
+		});
+		
+	}//end
+	
+	
+	public static void main(String[] args){
+		new TestAnonymouse1();
+	}
+}

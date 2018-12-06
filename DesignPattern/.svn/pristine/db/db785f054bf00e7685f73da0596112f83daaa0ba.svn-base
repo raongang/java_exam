@@ -1,0 +1,45 @@
+package javatest.test.generics;
+
+/**
+ * @author admin
+ * generic T는 객체생성할때 구체적인 타입으로 변경된다.
+ */
+
+class Box2<T>{
+	private T t;
+	
+	public void set(T t){
+		this.t = t;
+	}
+	
+	public T get(){
+		return t;
+	}
+	
+	//private Object object;
+	/*
+	public void set(Object object){
+		this.object = object;
+	}
+	
+	public Object get(){
+		return object;
+	}*/
+}
+
+public class GenericTest2 {
+	public static void main(String[] args) {
+		/*
+		Box box = new Box();
+		box.set(new String("test"));
+		//force downcasting regardless of type in box
+		String inbox = (String)box.get();
+		System.out.println("inbox : " + inbox);
+		*/
+		
+		Box2<String> box = new Box2<String>();
+		box.set(new String("Test"));
+		//downcasting is not needed
+		String inbox = box.get();
+	}
+}

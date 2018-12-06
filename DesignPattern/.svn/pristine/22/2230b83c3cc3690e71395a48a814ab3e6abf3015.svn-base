@@ -1,0 +1,45 @@
+package javatest.test.generics;
+
+import java.util.ArrayList;
+
+class Product{};
+class Vcr extends Product{};
+class Audio extends Product{};
+
+public class GenericsTest {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Product> list = new ArrayList<Product>();
+		list.add(new Product());
+		list.add(new Vcr());
+		list.add(new Audio());
+		
+		Product p = list.get(0);
+		//형변환.
+		Vcr r = (Vcr)list.get(1);
+		
+		ArrayList<Product> pArray = new ArrayList<Product>();
+		ArrayList<Vcr> vArray = new ArrayList<Vcr>();
+		
+		printAll(pArray);
+		printAll(vArray);
+		
+		ArrayList<Vcr> vcrList = new ArrayList<Vcr>();
+		vcrList.add(new Vcr());
+		printAll(vcrList);
+	}
+	
+	//wildcard ex1
+	public static void printAll(ArrayList<? extends Product> list){
+		for(Product p: list){
+			System.out.println(p);
+		}
+	}
+	
+	//wildcard ex2
+	public static<T extends Product> void PrintAll(ArrayList<T>list){
+		for(Product p : list)  {
+			System.out.println(p);
+		}
+	}
+}

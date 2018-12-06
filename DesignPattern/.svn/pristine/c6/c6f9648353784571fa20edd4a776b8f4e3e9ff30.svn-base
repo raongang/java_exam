@@ -1,0 +1,60 @@
+package javatest.test.generics2.exam5;
+
+import java.util.ArrayList;
+
+/**
+ * collection 에 저장된 object에도 polynomial을 적용하고 싶을때는 wildcard를 적용한다.
+ * @author admin
+ *
+ */
+
+
+class Product{}
+class Tv extends Product{}
+class Audio extends Product{}
+
+public class GenericEx1 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Product> productList = new ArrayList<Product>();
+		ArrayList<Tv> tvList = new ArrayList<Tv>();
+		
+		productList.add(new Tv());
+		productList.add(new Audio());
+		
+		tvList.add(new Tv());
+		tvList.add(new Tv());
+		
+		printAll(productList);
+		
+		System.out.println();
+		
+		/*
+		 * 원래 Product의 자식이 Tv라서 타입파라미터가 적용된 리스트도 다형성이 형성될 것이라 생각.
+		 * 하지만 compile error가 발생
+		 * 이를 위해 wildcard를 이용한다.
+		 */
+		//printAll(TvList); compile error
+		printAll2(tvList);
+		System.out.println();
+		printAll3Sample2(tvList);
+	}
+	
+	public static void printAll(ArrayList<Product> list){
+		for(Product p : list){
+			System.out.println(p);
+		}
+	}
+
+	public static void printAll2(ArrayList<? extends Product> list){ //2
+		for(Product p : list){
+			System.out.println(p);
+		}
+	}
+
+	public static <T extends Product> void printAll3Sample2(ArrayList<T> list){
+		for(Product p : list ) {
+			System.out.println(p);
+		}
+	}
+}

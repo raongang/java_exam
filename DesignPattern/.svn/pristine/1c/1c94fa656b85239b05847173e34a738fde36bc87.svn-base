@@ -1,0 +1,32 @@
+package javajungsuk.example.chapter7;
+
+public class PointTest2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		/**
+		 * 상속관계가 아니라 기본 this()가 생략되어 있지 않음.
+		 */
+		Struct s = new Struct(3,4);
+		
+	}
+
+}
+
+class Struct{
+	int x;
+	int y;
+	
+	Struct(){
+		System.out.println("기본 생성자");
+	}
+	
+	Struct(int x, int y){
+		
+		this.x = x;
+		this.y = y;
+		
+		System.out.println("x : " + x + " , y : " + y);
+	}
+}

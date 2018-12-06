@@ -1,0 +1,17 @@
+package javatest.test.generics.method;
+
+public class CompareMethodExam {
+	public static void main(String[] args){
+		Pair<Integer,String> pair = new Pair<Integer,String>(1,"app");
+		Pair<Integer,String> pair2 = new Pair<Integer,String>(1,"app");
+		
+		boolean result = Util.<Integer,String>compare(pair, pair2);
+		
+		if(result){
+			System.out.println("논리적으로 동등한 객체");
+		}else{
+			System.out.println("논리적으로 동등하지 않은 객체");
+		}
+	}//end main
+}//end class
+		

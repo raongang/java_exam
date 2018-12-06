@@ -1,0 +1,51 @@
+package javatest.test.Exception;
+
+/**
+ * 사용자 정의 Exception handling 
+ *  목적
+ *    1) 기능을 확장하기 위함이 아님
+ *    2) 예외 상황 발생시, 클래스 이름으로 즉기 그 예외 상황을 파악하기 위함
+ *    3) 예외클래스의 상속관계는 이름으로 예외를 분류하는 데 의미를 둠.
+ * @author adminw
+ *
+ */
+public class ExceptionTest {
+	//Throwable -> Exception -> RuntimeException -> IllegalArgumentException
+	
+	@SuppressWarnings("serial")
+	static class InvalidValueScopeException extends IllegalArgumentException{
+		public InvalidValueScopeException(){
+			super();
+		}
+		
+		public InvalidValueScopeException(String message, Throwable cause){
+			super(message,cause);
+		}
+		
+		public InvalidValueScopeException(String message) {
+			super(message);
+		}
+		
+		public InvalidValueScopeException(Throwable cause){
+			super(cause);
+		}
+	}//end class 
+
+	public static void main(String[] args) throws Throwable {
+		// TODO Auto-generated method stub
+		try{
+			if(args.length<1)
+				throw new IllegalArgumentException("no applicatio argument");
+			int age = Integer.parseInt(args[0]);
+			
+			if(age<1){
+				throw new Throwable("test");
+			}
+			
+		}catch(Throwable ex){
+			//throw new InvalidValueScopeException(ex.getCause());
+			throw new InvalidValueScopeException().initCause(ex);
+			//throw new InvalidValueScopeException(ex.getMessage(), ex.getCause());
+		}
+	}
+}

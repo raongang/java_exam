@@ -1,0 +1,16 @@
+package javajungsuk.packagetest;
+
+public class Test1 {
+
+	static class TestService extends Test2{
+		protected void printAll(){
+			System.out.println("printAll is Test1");
+		}
+	}
+	
+	public static void main(String[] args){
+		System.out.println("main class");
+		TestService t = new TestService();
+		t.printAll();
+	}
+}

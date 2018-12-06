@@ -1,0 +1,44 @@
+package javatest.test.testLocal;
+
+public class TestLocal {
+
+	int out_i = 1;
+	
+	public TestLocal(){
+		System.out.println("out con");
+	}
+	
+	public void method(int para_i, final int param_j){
+		int local_i = 0 ;
+		final int local_j = 0;
+		
+		class Local{
+			int i;
+			public Local(){
+				System.out.println("local con");
+			}
+			
+			public void localMethod(){
+				System.out.println("outerclass instance var : " + out_i);
+				System.out.println("param_j : " + param_j);
+				System.out.println("local var : " + local_j);
+				System.out.println("local class method");
+			}
+		}
+		
+		
+		Local local = new Local();
+		local.i = 10;
+		local.localMethod();
+		//local class start 
+		//outerClass$1localClass.class
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TestLocal t1 = new TestLocal();
+		t1.method(100,200);
+	}
+
+}

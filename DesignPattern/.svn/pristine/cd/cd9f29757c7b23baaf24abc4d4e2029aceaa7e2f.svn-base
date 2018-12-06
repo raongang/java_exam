@@ -1,0 +1,26 @@
+package javatest.test.extend;
+
+class Car{
+	String temp = "CAR";
+	public void printCar(){
+		System.out.println(this.temp);
+	}
+}
+
+class SmallCar extends Car{
+	String temp2 ="SMALLCAR";
+	public void printCar2(){
+		System.out.println(this.temp);
+	}
+}
+
+public class ExtendTest1 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//부모=자식 다형성에서는 자식의 멤버를 쓸수없음.
+		//Car 생략가능.
+		Car car = (Car)new SmallCar();
+		car.printCar();
+		System.out.println(car.temp);
+	}
+}

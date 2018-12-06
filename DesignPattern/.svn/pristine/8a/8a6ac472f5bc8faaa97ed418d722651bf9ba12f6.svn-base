@@ -1,0 +1,42 @@
+package javatest.test.innerclass;
+
+/**
+ * 안쪽 클래스를 인스턴스변수처럼 사용할 수 있는 InnerClass선언.
+ * @author admin
+ *
+ */
+public class TestInner {
+	
+	int i;
+	public TestInner(){
+		System.out.println("outer class construct");
+	}
+	
+	public void outMethod(){
+		System.out.println("outer class method");
+	}
+	
+	//inner class
+	public class Inner{
+		int j;
+		public Inner(){
+			System.out.println("inner class construnct");
+		}
+		
+		public void inMethod(){
+			System.out.println("inner class method");
+			System.out.println("inner class에서의 outer member i = " + i);
+		}
+	}
+	
+	
+	public static void main(String[] args){
+		TestInner ti = new TestInner();
+		ti.i =  100;
+		
+		TestInner.Inner in = ti.new Inner();
+		in.j = 100;
+		in.inMethod();
+		
+	}
+}

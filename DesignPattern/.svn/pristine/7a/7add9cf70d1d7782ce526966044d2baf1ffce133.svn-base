@@ -1,0 +1,58 @@
+package javatest.test.enumtest2;
+
+/**
+ * 
+ * 순서에 따라 0부터 인덱스 ,  순차적 증가
+ * enum 열거형으로 지정된 상수들은 대문자
+ * 
+ * @author admin
+ *
+ */
+public class Developer {
+	public String name;
+	public int career;
+	public DevType type; //방법1
+	
+	/* 방법2
+	public enum DevType {
+		MOBILE, WEB, SERVER
+	}*/
+	
+	public static void main(String[] args){
+		
+		Developer developer = new Developer();
+		developer.name = "name";
+		developer.career = 3;
+		developer.type = DevType.MOBILE;
+		
+		System.out.println("name : "  + developer.name);
+		System.out.println("career : " + developer.career);
+		System.out.println("type : "  + developer.type);
+		
+		
+		System.out.println("====================================");
+		System.out.println("값을 출력 ");
+		for(DevType type : DevType.values()){
+			System.out.println(type);
+		}
+		
+		System.out.println("====================================");
+		System.out.println("원소에 열거된 순서를 정수 값으로 리턴. ");
+		System.out.println(developer.type.ordinal());
+		DevType tp = developer.type.SERVER;
+		System.out.println(tp.ordinal());
+		
+		System.out.println("====================================");
+		DevType tp1 = DevType.MOBILE;
+		DevType tp2 = DevType.valueOf("WEB");
+		
+		System.out.println(tp1);
+		System.out.println(tp2);
+		
+	}
+}
+
+/*방법3
+enum DevType{
+	MIBLE,WEB,SERVER
+}*/

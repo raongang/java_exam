@@ -1,0 +1,37 @@
+package javatest.test.Exceptiontest;
+
+import java.io.IOException;
+
+
+class A {
+	boolean used =false;
+	//
+	void printCall() throws IOException{
+		System.out.println("print call");
+		print();
+	}
+	
+	//
+	void print() throws IOException{
+		while(true){
+			try{
+				System.out.println("enter print");
+				throw new IOException();
+				//used = true;
+				//break;
+			}catch(IOException ex){
+				ex.printStackTrace();
+				throw ex;
+				
+			}finally{
+				//System.out.println("finally print");
+			}
+		}
+	}
+}
+public class ExceptionMain {
+	public static void main(String[] args) throws IOException{
+		A temp = new A();
+		temp.printCall();
+	}
+}

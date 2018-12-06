@@ -1,0 +1,15 @@
+package javatest.test.generics2.exam1;
+
+//before generic.
+public class Box<String> {
+	private String t;
+
+	public final String getObject() {
+		return t;
+	}
+
+	public final void setObject(String t) {
+		this.t = t;
+	}
+	
+}

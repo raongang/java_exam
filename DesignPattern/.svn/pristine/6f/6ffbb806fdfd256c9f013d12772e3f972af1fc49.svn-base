@@ -1,0 +1,25 @@
+package javatest.test.thread;
+
+public class ThreadEx04 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		K kp = new K();
+		kp.start();
+	}
+}
+
+class K extends Thread{
+	private int x = 100;
+	public synchronized void setX(int x){
+		this.x+=x;
+	}
+	
+	public synchronized int getX(){
+		return x;
+	}
+	
+	public synchronized void run(){
+		setX(200); // 300+200
+		System.out.println("x = " + getX());
+	}
+}

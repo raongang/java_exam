@@ -1,0 +1,17 @@
+package javatest.test;
+
+public class ParsingTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s = "HTTP/1.1 200 OK";
+		
+		int at = 0;
+		while(Character.isWhitespace(s.charAt(at))){
+			++at;
+		}
+		System.out.println(s.substring(at,at+4));
+	}
+}
+
+

@@ -1,0 +1,11 @@
+package javatest.test.generics2.exam1;
+
+public class BoxExam {
+	public static void main(String[] args){
+		Box<String> box = new Box<String>();
+		box.setObject("test");
+		String name = box.getObject();
+		System.out.println(name);
+		
+	}
+}

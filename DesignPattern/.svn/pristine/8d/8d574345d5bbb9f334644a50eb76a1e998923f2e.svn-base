@@ -1,0 +1,8 @@
+package javatest.test.assertTest;
+
+public class AssertTest {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		assert 1 != 1 : "왼쪽의 조건식이 false이면 이 메세지와 함께 AssertionError 가 발생합니다.";
+	}
+}

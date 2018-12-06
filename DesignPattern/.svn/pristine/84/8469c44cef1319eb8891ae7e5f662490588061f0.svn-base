@@ -1,0 +1,44 @@
+package javajungsuk.example.chapter7;
+/**
+ * Final 제어자 - 변수에 사용하면 값을 변경할 수 없는 상수가 되며, 메소드에 사용하면 오버라이딩 불가,
+ *                클래스에 사용하면 자신을 확장하는 자손클래스를 가질 수 없다.
+ * ex) String , Math
+ * 	System.out.println(Math.random()*10);
+ * @author admin
+ *
+ */
+
+class Card{
+	final int NUMBER;
+	final String KIND;
+	static int width = 100;
+	static int height = 250;
+	
+	
+	//final은 선언과 동시에 초기화하지만 생성자를 통해 초기화 할 수도 있음.
+	Card(String kind, int num){
+		KIND = kind;
+		NUMBER = num;
+	}
+	
+	Card(){
+		this("HEART",1);
+	}
+	
+	public String toString(){
+		return "" + KIND + " "  + NUMBER;
+	}
+}
+
+public class FinalCardTest {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Card c = new Card("HEART",10);
+		//c.NUMBER = 5; //final이라서 error
+		
+		Card.width = 20;
+		
+		System.out.println(c.KIND);
+		System.out.println(c.NUMBER);
+	}
+}//end class 

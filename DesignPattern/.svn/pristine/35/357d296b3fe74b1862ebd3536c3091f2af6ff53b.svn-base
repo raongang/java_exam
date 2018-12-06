@@ -1,0 +1,65 @@
+package javatest.test.enumtest;
+
+//jdk1.5부터 추가됨.
+public class EnumTest {
+	
+	public static final String MALE="MALE";
+	public static final String FEMAIL="FEMAIL";
+	
+	public static void main(String[] args){
+		String gender1;
+		
+		gender1 = EnumTest.MALE;
+		gender1 = EnumTest.FEMAIL;
+		
+		//MALE,FEMALE이 아닌 상수값 할당시 컴파일 에러가 나지 않음 -> 문제점 발생.
+		gender1 = "boy";
+		
+		//System.out.println("gender1 : " + gender1);
+		
+		int gubun = Gender.FEMALE.initValue();
+		
+		
+		//컴파일시 의도하지 않는 상수값을 체크할 수 있음.
+		//Enum으로 정의한 상수값만 할당 받을수 있음.
+		//gender2 = "boy"; //에러 발생.
+		System.out.println("gubun : " + gubun);
+		
+		int next_gubun = Gender.FEMALE.nextGender().initValue();
+		System.out.println("female next gubun : " + next_gubun);
+		
+	}
+	
+	enum Gender{
+		TRANS(3,null), FEMALE(2,TRANS) , MALE(0,FEMALE);
+
+		private final int gubun;
+		private Gender next_gubun;
+		
+		private Gender(int gubun, Gender next_gubun) {
+			this.gubun = gubun;
+			this.next_gubun = next_gubun;
+		}
+
+		public int initValue() {
+			return gubun;
+		}
+		
+		public Gender nextGender(){
+			return next_gubun;
+		}
+		
+		
+		//public static final Gender MALE = new Gender();
+		//public static final Gender FEMALE = new Gender();
+	}
+	
+	/**
+	 * enum Gender 는 아래와 같이 내부적으로 생략되어 있음.
+	 * 
+	class Gender{
+		public static final Gender MALE=new Gender();
+		public static final Gender FEMALE = new Gender();
+	}*/
+	
+}

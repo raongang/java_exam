@@ -1,0 +1,27 @@
+package javatest.test.generics.extend;
+
+class TV{
+	String tv;
+	public TV(){
+		tv = "generic.TV";
+	}
+}
+
+public class ChildProductAndStorageExam {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ChildProduct<TV,String,String> product  = new ChildProduct<TV,String,String>();
+		
+		product.setKind(new TV());
+		product.setModel("Smart-TV");
+		product.setCompany("LG");
+		
+		System.out.println("====Infomation====");
+		System.out.println(product.getKind().getClass().getName()+":"+ product.getModel()+"-"+product.getCompany());
+		
+		System.out.println("===================");
+		Storage<TV> storage = new StorageImpl<TV>(100);
+		storage.add(new TV(), 0);
+		TV tv = storage.get(0);
+	}
+} //end class.
