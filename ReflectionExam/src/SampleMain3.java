@@ -30,22 +30,20 @@ public class SampleMain3 {
 					System.out.println("param #" + j + " " + pvec[j]);
 				}
 				
+				/*
 				Class evec[] = m.getExceptionTypes();
 				
 				for (int j = 0; j < evec.length; j++)
 					System.out.println("exc #" + j + " " + evec[j]);
+				*/
 				
 				System.out.println("return type = " + m.getReturnType());
 
 				System.out.println("-----");
 			}
-			
-			
-			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
 }

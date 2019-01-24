@@ -1,4 +1,4 @@
-package searchJar;
+
 import java.io.FileInputStream;
 import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
