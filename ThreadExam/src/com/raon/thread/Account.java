@@ -23,6 +23,9 @@ public class Account {
 	
 	//방법2 객체에 lock걸기
 	public void withdraw(int money) {
+		System.out.println("this : " + this);
+		System.out.println("this.getClass().getName() >> " + this.getClass().getName());
+		
 		synchronized (this) {
 			System.out.println("withdraw class : " + Thread.currentThread().getName());	
 			

@@ -26,8 +26,6 @@ package com.raon.thread;
 public class TharedTest {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		
 		/*
 		 * 동기화 구현 
 		 *   synchronized 키워드를 사용하며 lock이 걸리면 다른 쓰레드가 접근하여 데이터를 변경할수 없다.
